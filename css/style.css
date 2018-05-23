@@ -40,8 +40,7 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
-  color: #777;
-  padding: 3rem; }
+  color: #777; }
 
 .heading-primary {
   color: #fff;
@@ -71,15 +70,10 @@ body {
   font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 700;
-  background-image: linear-gradient(to right, #00EEEE, #226666);
+  color: #777;
   display: inline-block;
-  -webkit-background-clip: text;
-  color: transparent;
   letter-spacing: 2px;
   transition: all, .2s; }
-  .heading-secondary:hover {
-    transform: skewY(2deg) skewX(15deg) scale(1.1);
-    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
 .heading-tertiary {
   font-size: 1.6rem;
@@ -90,6 +84,10 @@ body {
   font-size: 1.6rem; }
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
+
+.landing__list-text {
+  font-size: 2.1rem;
+  color: white; }
 
 .u-center-text {
   text-align: center; }
@@ -168,32 +166,120 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transform: translateY(0); }
 
+.composition {
+  position: relative; }
+  .composition__photo {
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    max-width: 100%;
+    height: auto; }
+    .composition__photo--p1 {
+      left: -3rem;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 2rem;
+      top: 7rem; }
+    .composition__photo--p3 {
+      left: 60%;
+      top: 17rem; }
+    .composition__photo:hover {
+      transform: scale(1.05) translateY(-0.5rem);
+      z-index: 20; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
+
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 30rem; }
+  .card__side {
+    overflow: hidden;
+    height: 30rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .card__side--front {
+      background-color: #fff; }
+    .card__side--back {
+      transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #00EEEE, #226666); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0deg); }
+  .card__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #00EEEE, #226666), url(../img/desk.jpg); }
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: #fff;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%; }
+  .card__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(0, 238, 238, 0.85), rgba(34, 102, 102, 0.85)); }
+  .card__details {
+    padding: 3rem; }
+    .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 1px solid #eee; }
+
 .section-about {
   background-color: #f7f7f7;
-  padding: 25rem 0;
+  padding: 15rem 0;
   margin-top: -20vh; }
 
-.header {
+.landing {
   height: 95vh;
   /*viewport height*/
   background-image: linear-gradient(to right bottom, rgba(0, 238, 238, 0.8), rgba(34, 102, 102, 0.8)), url("../img/desk.jpg");
   background-size: cover;
   /*width of viewport or element with cover*/
   background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 80%, 0 95%);
-  position: relative; }
-  .header__logo-box {
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 80%, 0 95%); }
+  .landing__logo-box {
     position: absolute;
     top: 4rem;
     left: 4rem; }
-  .header__logo {
+  .landing__logo {
     height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .landing__text-box {
+    margin-top: 10rem;
+    margin-left: 5rem;
     text-align: center; }
+  .landing__list {
+    margin-top: 18rem;
+    margin-left: 12rem;
+    width: 60%; }
 
 .row {
   max-width: 114rem;
